@@ -37,7 +37,11 @@ def shape_to_matrix(shape):
              [ 1.,  1.,  1.,  1.,  1.,  1.]])
 
     """
-    return None # TODO
+    points =[]
+    for segment in shape:
+        for point in segment:
+            points.append([point[0], point[1], point[2], 1])
+    return np.array(points).T
 
 def transform_matrix(x_tr, y_tr, z_tr, roll, pitch, yaw):
     """the matrix applied to a shape in order to transformation it by
